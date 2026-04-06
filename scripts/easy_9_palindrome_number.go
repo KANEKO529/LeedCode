@@ -8,8 +8,6 @@
 
 package scripts
 
-import "strconv"
-
 // @lc code=start
 
 func isPalindrome(x int) bool {
@@ -19,21 +17,39 @@ func isPalindrome(x int) bool {
 	}
 
 	//xを配列にしたい
-	s := strconv.Itoa(x)
+	// s := strconv.Itoa(x)
 
-	left := 0
-	right := len(s) - 1
+	// left := 0
+	// right := len(s) - 1
 
-	for left < right {
-		if s[left] != s[right] {
-			return false
-		}
-		left++
-		right--
+	// for left < right {
+	// 	if s[left] != s[right] {
+	// 		return false
+	// 	}
+	// 	left++
+	// 	right--
+	// }
+
+	// return true
+
+	o := x
+
+	r := 0
+
+	for x > 0 {
+
+		// 1の位を取得
+		tmp := x % 10
+
+		// 逆順を作っていく
+		r = r*10 + tmp
+
+		//桁数を一つ減らす
+		x = x / 10
+
 	}
 
-	return true
-
+	return r == o
 }
 
 // @lc code=end
