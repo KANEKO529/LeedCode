@@ -70,19 +70,26 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	// どちらか片方でも true なら続く
 	for l1 != nil || l2 != nil || carry != 0 {
+		// 開始前に前回のcarryを忘れずに
 		sum := carry
 
+		//if文なので、一回のみ
+		// sumにl1のvalを足して、次にセット
 		if l1 != nil {
 			sum += l1.Val
 			l1 = l1.Next
 		}
 
+		//if文なので、一回のみ
+		// sumにl2のvalを足して、次にセット
 		if l2 != nil {
 			sum += l2.Val
 			l2 = l2.Next
 		}
 
+		//繰り上げの計算
 		carry = sum / 10
+		// 桁計算
 		digit := sum % 10
 
 		// こうやって新しいノードを作成し、つなげる
