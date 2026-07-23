@@ -89,6 +89,7 @@ func shortestPathBinaryMatrix(grid [][]int) int {
 		return -1
 	}
 
+	// 座標と距離を管理
 	type Point struct {
 		r    int
 		c    int
@@ -124,7 +125,7 @@ func shortestPathBinaryMatrix(grid [][]int) int {
 				continue
 			}
 
-			// 1なら通れない or 訪問済み
+			// 1なら、元々通れない or 訪問済み
 			if grid[nr][nc] != 0 {
 				continue
 			}

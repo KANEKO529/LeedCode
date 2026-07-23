@@ -84,6 +84,7 @@ func orangesRotting(grid [][]int) int {
 
 	for len(queue) > 0 {
 		size := len(queue)
+		// この時間で腐ったか
 		rottedThisMinute := false
 
 		// 今キューに入っている分だけ処理する
